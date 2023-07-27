@@ -17,7 +17,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ PokemonList }) => {
   };
 
   const filteredPokemon = PokemonList.filter((pokemon) =>
-    pokemon.name.toLowerCase().startsWith(searchText.toLowerCase())
+    pokemon.name.toLowerCase().startsWith(searchText.toLowerCase()) || pokemon.PokedexId.toString().startsWith(searchText)
   );
 
   return (

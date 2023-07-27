@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import SearchBar from "./components/SearchBar/searchbar";
 import axios from "axios";
-import SingleCard from "./components/SingleCard/SingleCard";
 import Card from "./components/Cards/Card";
 
 function App() {
