@@ -220,6 +220,6 @@ app.post("/login", function (req, res) {
 });
 
 // starts server
-app.listen(5000, () => {
+app.listen(5001, () => {
   console.log("Server is running on 5000");
 });
