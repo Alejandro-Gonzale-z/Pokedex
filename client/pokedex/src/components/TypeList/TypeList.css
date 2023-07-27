@@ -1,64 +1,99 @@
-.container{
+.container {
+  max-width: 1650px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  margin-bottom: 30px;
 }
-.button{
-    margin: 10px;
-    width: 80px;
-    justify-content: center;
+
+.button {
+  margin: 10px;
+  width: 160px;
+  justify-content: center;
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
 }
-.fire{
-    background-color: red; 
-    color: white;
+
+.fire {
+  background-color: red;
+  color: white;
 }
-.grass{
-    background-color: green;
-    color: white;
+
+.grass {
+  background-color: green;
+  color: white;
 }
-.water{
-    background-color: blue;
-    color: white;
+
+.water {
+  background-color: blue;
+  color: white;
 }
-.flying{
-    background-color: rgba(72, 72, 185, 0.94); 
+
+.flying {
+  background-color: rgba(72, 72, 185, 0.94);
+  color: white;
 }
-.normal{
-    background-color: rgba(183, 161, 133, 0.971);
+
+.normal {
+  background-color: rgba(183, 161, 133, 0.971);
 }
-.poison{
-    background-color: purple;
+
+.poison {
+  background-color: purple;
+  color: white;
 }
-.rock{
-    background-color: rgb(171, 84, 13);
+
+.rock {
+  background-color: rgb(171, 84, 13);
 }
-.bug{
-    background-color: #9fb036;
+
+.bug {
+  background-color: #9fb036;
 }
-.ghost{
-    background-color: rgba(42, 5, 84, 0.882);
+
+.ghost {
+  background-color: rgba(42, 5, 84, 0.882);
+  color: white;
 }
-.fighting{
-    background-color: rgba(255, 0, 0, 0.468);
+
+.fighting {
+  background-color: rgba(255, 0, 0, 0.468);
 }
-.ground{
-    background-color: sandybrown;
+
+.ground {
+  background-color: sandybrown;
 }
-.psychic{
-    background-color: hotpink;
+
+.psychic {
+  background-color: hotpink;
 }
-.ice{
-    background-color: lightblue;
+
+.ice {
+  background-color: lightblue;
 }
-.electric{
-    background-color: yellow;
+
+.electric {
+  background-color: yellow;
 }
-.dragon{    
-    background-color: rgb(97, 23, 167);
-}   
-.dark{
-    background-color: rgb(57, 35, 35);
+
+.dragon {
+  background-color: rgb(97, 23, 167);
+  color: white;
 }
-.fairy{
-    background-color: rgb(184, 112, 124);
+
+.dark {
+  background-color: rgb(57, 35, 35);
+  color: white;
 }
-.steel{
-    background-color: rgb(72, 68, 68);
+
+.fairy {
+  background-color: rgb(184, 112, 124);
+}
+
+.steel {
+  background-color: rgb(72, 68, 68);
+  color: white;
 }

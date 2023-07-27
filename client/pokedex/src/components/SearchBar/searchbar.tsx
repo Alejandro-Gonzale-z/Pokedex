@@ -16,13 +16,15 @@ const SearchBar: React.FC<SearchBarProps> = ({ PokemonList }) => {
     setSearchText(event.target.value);
   };
 
-  const filteredPokemon = PokemonList.filter((pokemon) =>
-    pokemon.name.toLowerCase().startsWith(searchText.toLowerCase()) || pokemon.PokedexId.toString().startsWith(searchText)
+  const filteredPokemon = PokemonList.filter(
+    (pokemon) =>
+      pokemon.name.toLowerCase().startsWith(searchText.toLowerCase()) ||
+      pokemon.PokedexId.toString().startsWith(searchText)
   );
 
   return (
     <div className="header">
-      <a className="title-and-image">
+      <a className="title-and-image" href="/">
         PokeInfo
         <img src={pokeballImg} alt="Pokeball" className="pokeball-img" />
       </a>

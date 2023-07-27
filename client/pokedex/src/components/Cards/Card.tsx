@@ -15,7 +15,15 @@ const Card: React.FC<CardProps> = ({ Pokemon, filteredList }) => {
   return (
     <div className="wrapper">
       {filteredPokemon.map((pokemon) => (
-        <div key={pokemon.PokedexId} className="pokemon-card">
+        <div
+          key={pokemon.PokedexId}
+          className={`pokemon-card ${
+            pokemon.elementalType.length > 1
+              ? pokemon.elementalType[0].toLowerCase() +
+                pokemon.elementalType[1].toLowerCase()
+              : pokemon.elementalType[0].toLowerCase()
+          }`}
+        >
           <p className="card-text">
             #{pokemon.PokedexId} {pokemon.name}{" "}
           </p>

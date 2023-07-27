@@ -31,7 +31,7 @@ function App() {
   useEffect(() => {
     // Fetch Pokedex data from the API
     axios
-      .get("http://localhost:5000/api/")
+      .get("http://localhost:5001/api/")
       .then((response) => {
         setPokedexData(response.data);
       })

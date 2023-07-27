@@ -24,7 +24,7 @@ const TypeList: React.FC<TypeListProps> = ({
         <button
           key={List.indexOf(type)}
           onClick={() => handleClick(type)}
-          className={'button ${type.toLowerCase()}'}
+          className={`button ${type.toLowerCase()}`}
         >
           {type}
         </button>

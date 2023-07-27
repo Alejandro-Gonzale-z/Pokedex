@@ -2,17 +2,16 @@
   display: flex;
   flex-direction: column;
   text-align: center;
-  width: 50%;
   border: 1px solid black;
   border-radius: 10px;
   align-self: center;
   padding: 20px;
-  margin-bottom: 50px;
+  max-width: 250px;
 }
 
 .card-img {
-  width: 500px;
-  height: 500px;
+  width: 200px;
+  height: 200px;
   object-fit: fit;
   align-self: center;
   padding-bottom: 15px;
@@ -20,14 +19,121 @@
 
 .wrapper {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: center;
   margin-top: 20px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
 .card-text {
-  font-size: 40px;
+  font-size: 24px;
   border: 1px solid black;
   border-radius: 10px;
-  width: 50%;
+  width: 100%;
   align-self: center;
+  padding: 0 10px;
+  background-color: white;
+  color: black;
+}
+
+.fire {
+  background-color: red;
+}
+
+.grass {
+  background-color: green;
+}
+
+.water {
+  background-color: blue;
+}
+
+.flying {
+  background-color: rgba(72, 72, 185, 0.94);
+}
+
+.normal {
+  background-color: rgba(183, 161, 133, 0.971);
+}
+
+.poison {
+  background-color: purple;
+}
+
+.rock {
+  background-color: rgb(171, 84, 13);
+}
+
+.bug {
+  background-color: #9fb036;
+}
+
+.ghost {
+  background-color: rgba(42, 5, 84, 0.882);
+}
+
+.fighting {
+  background-color: rgba(255, 0, 0, 0.468);
+}
+
+.ground {
+  background-color: sandybrown;
+}
+
+.psychic {
+  background-color: hotpink;
+}
+
+.ice {
+  background-color: lightblue;
+}
+
+.electric {
+  background-color: yellow;
+}
+
+.dragon {
+  background-color: rgb(97, 23, 167);
+}
+
+.dark {
+  background-color: rgb(57, 35, 35);
+}
+
+.fairy {
+  background-color: rgb(184, 112, 124);
+}
+
+.steel {
+  background-color: rgb(72, 68, 68);
+}
+
+.poisonground {
+  background: linear-gradient(145deg, sandybrown, purple);
+}
+
+.grasspoison {
+  background: linear-gradient(145deg, green, purple);
+}
+
+.fireflying {
+  background: linear-gradient(145deg, red, rgba(72, 72, 185, 0.94));
+}
+
+.bugflying {
+  background: linear-gradient(145deg, #9fb036, rgba(72, 72, 185, 0.94));
+}
+
+.bugpoison {
+  background: linear-gradient(145deg, #9fb036, purple);
+}
+
+.normalflying {
+  background: linear-gradient(
+    145deg,
+    rgba(183, 161, 133, 0.971),
+    rgba(72, 72, 185, 0.94)
+  );
 }
