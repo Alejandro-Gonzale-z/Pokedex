@@ -141,3 +141,31 @@
     rgba(72, 72, 185, 0.94)
   );
 }
+
+.normalfairy {
+  background: linear-gradient(
+    145deg,
+    rgba(183, 161, 133, 0.971),
+    rgba(184, 112, 124)
+  );
+}
+
+.poisonflying{
+  background: linear-gradient(
+    145deg,
+    purple,
+    rgba(72, 72, 185, 0.94)
+  );
+}
+
+.posiongrass{
+  background: linear-gradient(
+    145deg,
+    purple,
+    green
+  );
+}
+
+.buggrass{
+  background: linear-gradient(145deg,#9fb036,green);
+}
