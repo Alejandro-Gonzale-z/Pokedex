@@ -15,17 +15,18 @@ const Card: React.FC<CardProps> = ({ Pokemon, filteredList }) => {
   return (
     <div className="wrapper">
       {filteredPokemon.map((pokemon) => (
+        <a className="link" href={`/${pokemon.name}`}>
         <div
-          key={pokemon.PokedexId}
-          className={`pokemon-card ${
-            pokemon.elementalType.length > 1
-              ? pokemon.elementalType[0].toLowerCase() +
-                pokemon.elementalType[1].toLowerCase()
-              : pokemon.elementalType[0].toLowerCase()
-          }`}
+        key={pokemon.PokedexId}
+        className={`pokemon-card ${
+          pokemon.elementalType.length > 1
+          ? pokemon.elementalType[0].toLowerCase() +
+          pokemon.elementalType[1].toLowerCase()
+          : pokemon.elementalType[0].toLowerCase()
+        }`}
         >
           <p className="card-text">
-            #{pokemon.PokedexId} {pokemon.name}{" "}
+            #{pokemon.PokedexId} {pokemon.name}
           </p>
           <img
             src={pokemon.mainPicture}
@@ -34,6 +35,7 @@ const Card: React.FC<CardProps> = ({ Pokemon, filteredList }) => {
           />
           <div className="card-body"></div>
         </div>
+        </a>
       ))}
     </div>
   );

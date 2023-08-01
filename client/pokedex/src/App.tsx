@@ -6,6 +6,8 @@ import TypeList from "./components/TypeList/TypeList";
 
 function App() {
   const [pokedexData, setPokedexData] = useState<any[]>([]);
+  const [moveData, setMoveData] = useState<any[]>([]);
+
   const List = [
     "Fire",
     "Grass",
@@ -26,14 +28,25 @@ function App() {
     "Fairy",
     "Steel",
   ];
+
   const [filteredList, setFilteredList] = useState<string[]>(List);
 
   useEffect(() => {
     // Fetch Pokedex data from the API
     axios
-      .get("http://localhost:5001/api/")
+      .get("http://localhost:5000/pokemon/api/")
       .then((response) => {
         setPokedexData(response.data);
+      })
+      .catch((error) => {
+        console.error("Error fetching Pokedex data:", error);
+      });
+
+    // Fetch move data from api
+    axios
+      .get("http://localhost:5000/moves/api")
+      .then((response) => {
+        setMoveData(response.data);
       })
       .catch((error) => {
         console.error("Error fetching Pokedex data:", error);

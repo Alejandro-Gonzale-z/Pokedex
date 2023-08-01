@@ -46,6 +46,34 @@ const PokedexSchema = {
     type: Number,
     required: true,
   },
+  hp: {
+    type: Number,
+    required: false,
+  },
+  attack: {
+    type: Number,
+    required: false,
+  },
+  defense: {
+    type: Number,
+    required: false,
+  },
+  speed: {
+    type: Number,
+    required: false,
+  },
+  specialAttack: {
+    type: Number,
+    required: false,
+  },
+  specialDefense: {
+    type: Number,
+    required: false,
+  },
+  catchRate: {
+    type: Number,
+    required: false,
+  },
   description: {
     type: String,
     required: true,
@@ -81,16 +109,46 @@ const PokedexSchema = {
   evolutionChain: [
     {
       pokemon: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Pokedex",
+        name: String,
+        levelEvolved: Number,
       },
-      method: String,
     },
   ],
 };
 
 const Pokedex = mongoose.model("Pokedex", PokedexSchema, "Pokedex");
 
+const MoveSchema = {
+  name: {
+    type: String,
+    required: true,
+  },
+  type: {
+    type: String,
+    required: true,
+  },
+  power: {
+    type: Number,
+    required: true,
+  },
+  powerPoints: {
+    type: Number,
+    required: true,
+  },
+  accuracy: {
+    type: Number,
+    required: true,
+  },
+  category: {
+    type: String,
+    required: true,
+  },
+};
+
+const Moves = mongoose.model("Moves", MoveSchema, "Moves");
+
+
+//function to authenticate the users trying to access input forms
 function authenticated(username, password) {
   const usernameHidden = process.env.login_username;
   const passwordHidden = process.env.login_password;
@@ -102,13 +160,14 @@ function authenticated(username, password) {
   }
 }
 
+//function to create moveset fit for input to pokedex collection
+//not for the moves collection
 function createMoveset(moveNameInput, levelLearnedInput) {
   let moveset = [];
   const nameArray = moveNameInput.split(",").map((name) => name.trim());
   const levelArray = levelLearnedInput
     .split(",")
     .map((level) => Number(level.trim()));
-
   if (nameArray.length === levelArray.length) {
     const dataLength = nameArray.length;
     for (let i = 0; i < dataLength; i++) {
@@ -126,8 +185,8 @@ function createMoveset(moveNameInput, levelLearnedInput) {
   }
 }
 
-// API route
-app.get("/api", function (req, res) {
+// API route to get all pokemon data
+app.get("/pokemon/api", function (req, res) {
   Pokedex.find()
     .then((pokedexData) => {
       res.json(pokedexData);
@@ -140,6 +199,20 @@ app.get("/api", function (req, res) {
     });
 });
 
+app.get("/moves/api", function (req,res) {
+  Moves.find()
+  .then((movesData)=> {
+    res.json(movesData);
+  })
+  .catch((error)=> {
+    console.log(error);
+    res
+    .status(500)
+    .json({error: "An error occured while fetching moves data" });
+  });
+});
+
+// API route to get individual pokemon data
 app.get("/pokemon/:name", function (req, res) {
   Pokedex.findOne({ name: req.params.name })
     .then((pokedexData) => {
@@ -162,7 +235,7 @@ app.get("/login", function (req, res) {
   res.sendFile(__dirname + "/login.html");
 });
 
-app.get("/input", function (req, res) {
+app.get("/pokemon-input", function (req, res) {
   if (req.session.authenticated) {
     res.sendFile(__dirname + "/input.html");
   } else {
@@ -170,9 +243,18 @@ app.get("/input", function (req, res) {
   }
 });
 
-//  html to mongodb logic
-app.post("/input", function (req, res) {
+app.get("/move-input", function (req, res) {
+  if (req.session.authenticated){
+    res.sendFile(__dirname + "/moveset.html");
+  } else {
+    res.redirect("/login");
+  }
+});
+
+//  html to mongodb for pokedex collection
+app.post("/pokemon-input", function (req, res) {
   const moveset = createMoveset(req.body.moveName, req.body.levelLearned);
+
   if (moveset === null) {
     res.status(400).send("Moveset parameters are not of equal length, Retry");
     return;
@@ -181,6 +263,13 @@ app.post("/input", function (req, res) {
   let newPokedex = new Pokedex({
     name: req.body.name,
     PokedexId: req.body.PokedexId,
+    hp: req.body.hp,
+    attack: req.body.attack,
+    defense: req.body.defense,
+    speed: req.body.speed,
+    specialAttack: req.body.specialAttack,
+    specialDefense: req.body.specialDefense,
+    catchRate: req.body.catchRate,
     weight: req.body.weight,
     height: req.body.height,
     description: req.body.description,
@@ -197,11 +286,33 @@ app.post("/input", function (req, res) {
     .save()
     .then((Pokemon) => {
       console.log("Saved:", Pokemon.name);
-      res.redirect("/input");
+      res.redirect("/pokemon-input");
     })
     .catch((error) => {
       console.log(error);
       res.status(500).send("An error occured while saving pokedex entry");
+    });
+});
+
+//  html to mongo for moves collections
+app.post("/move-input", function (req, res) {
+  let newMove = new Moves({
+    name: req.body.name,
+    type: req.body.type,
+    power: req.body.power,
+    powerPoints: req.body.powerPoints,
+    accuracy: req.body.accuracy,
+    category: req.body.category,
+  });
+  newMove
+    .save()
+    .then((Move) => {
+      console.log("Saved:", Move.name);
+      res.redirect("/move/input");
+    })
+    .catch((error) => {
+      console.log(error);
+      res.status(500).send("An error occured while saving move entry");
     });
 });
 
@@ -212,7 +323,7 @@ app.post("/login", function (req, res) {
 
   if (authenticated(username, password)) {
     req.session.authenticated = true;
-    res.redirect("/input");
+    res.redirect("/");
   } else {
     res.redirect("/login");
     //res.status(401).send("Invalid Credentials");
@@ -220,6 +331,7 @@ app.post("/login", function (req, res) {
 });
 
 // starts server
-app.listen(5001, () => {
-  console.log("Server is running on 5000");
+var port = 5000;
+app.listen(port, () => {
+  console.log("Server is running on " + port);
 });

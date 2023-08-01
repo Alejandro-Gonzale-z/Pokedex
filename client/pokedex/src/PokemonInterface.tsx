@@ -3,6 +3,13 @@ export interface Pokedex{
     PokedexId: number;
     weight: number;
     height: number;
+    hp: number;
+    attack: number;
+    defense: number;
+    speed: number;
+    specialAttack: number;
+    specialDefense: number;
+    catchRate: number;
     description: string;
     elementalType: string[];
     strength: string[];
@@ -13,8 +20,8 @@ export interface Pokedex{
       moveName: string;
     }[];
     evolutionChain: {
-      pokemon: Pokedex;
-      method: string;
+        name: string;
+        levelEvolved: number;
     }[];
   }
 export default Pokedex;
