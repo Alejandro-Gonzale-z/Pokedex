@@ -226,6 +226,20 @@ app.get("/pokemon/:name", function (req, res) {
     });
 });
 
+//API route to get individual pokemon data
+app.get("/moves/:name", function (req, res) {
+  Moves.findOne({ name: req.params.name.replace(/-/g, ' ') })
+    .then((movesData) => {
+      res.json(movesData);
+    })
+    .catch((error) => {
+      console.log(error);
+      res
+        .status(500)
+        .json({ error: "An error occured while fetching pokedex data" });
+    });
+});
+
 // HTML serving routes
 app.get("/", function (req, res) {
   res.sendFile(__dirname + "/index.html");
