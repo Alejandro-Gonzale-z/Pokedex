@@ -1,6 +1,7 @@
 import React from "react";
 import { Pokedex } from "../../PokemonInterface";
 import "./Card.css";
+import { Link } from "react-router-dom";
 
 interface CardProps {
   Pokemon: Pokedex[];
@@ -15,7 +16,7 @@ const Card: React.FC<CardProps> = ({ Pokemon, filteredList }) => {
   return (
     <div className="wrapper">
       {filteredPokemon.map((pokemon) => (
-        <a className="link" href={`/${pokemon.name}`}>
+        <Link to={`/pokemon/${pokemon.name}`} className="link">
         <div
         key={pokemon.PokedexId}
         className={`pokemon-card ${
@@ -35,7 +36,7 @@ const Card: React.FC<CardProps> = ({ Pokemon, filteredList }) => {
           />
           <div className="card-body"></div>
         </div>
-        </a>
+        </Link>
       ))}
     </div>
   );

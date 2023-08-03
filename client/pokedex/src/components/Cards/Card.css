@@ -17,7 +17,7 @@
   padding-bottom: 15px;
 }
 
-.link{
+.link {
   text-decoration: none;
 }
 
@@ -150,22 +150,90 @@
   );
 }
 
-.poisonflying{
+.poisonflying {
+  background: linear-gradient(145deg, purple, rgba(72, 72, 185, 0.94));
+}
+
+.posiongrass {
+  background: linear-gradient(145deg, purple, green);
+}
+
+.buggrass {
+  background: linear-gradient(145deg, #9fb036, green);
+}
+
+.waterfighting {
+  background: linear-gradient(145deg, blue, rgba(255, 0, 0, 0.468));
+}
+
+.rockground {
+  background: linear-gradient(145deg, sandybrown, rgb(171, 84, 13));
+}
+
+.waterpoison {
+  background: linear-gradient(145deg, blue, purple);
+}
+
+.waterpsychic {
+  background: linear-gradient(145deg, blue, hotpink);
+}
+
+.electricsteel {
+  background: linear-gradient(145deg, yellow, rgb(72, 68, 68));
+}
+
+.waterice {
+  background: linear-gradient(145deg, blue, lightblue);
+}
+
+.ghostpoison {
+  background: linear-gradient(145deg, rgba(42, 5, 84, 0.882), purple);
+}
+
+.grasspsychic {
+  background: linear-gradient(145deg, green, hotpink);
+}
+
+.groundrock {
+  background: linear-gradient(145deg, sandybrown, rgba(171, 84, 13));
+}
+
+.psychicfairy {
+  background: linear-gradient(145deg, hotpink, rgb(184, 112, 124));
+}
+
+.icepsychic {
+  background: linear-gradient(145deg, lightblue, hotpink);
+}
+
+.waterflying {
+  background: linear-gradient(145deg, blue, rgba(72, 72, 185, 0.94));
+}
+
+.rockwater {
+  background: linear-gradient(145deg, rgb(171, 84, 13), blue);
+}
+
+.rockflying {
   background: linear-gradient(
     145deg,
-    purple,
+    rgb(171, 84, 13),
     rgba(72, 72, 185, 0.94)
   );
 }
 
-.posiongrass{
-  background: linear-gradient(
-    145deg,
-    purple,
-    green
-  );
+.iceflying {
+  background: linear-gradient(145deg, lightblue, rgba(72, 72, 185, 0.94));
 }
 
-.buggrass{
-  background: linear-gradient(145deg,#9fb036,green);
+.electricflying {
+  background: linear-gradient(145deg, yellow, rgba(72, 72, 185, 0.94));
+}
+
+.dragonflying {
+  background: linear-gradient(
+    145deg,
+    rgb(97, 23, 167),
+    rgba(72, 72, 185, 0.94)
+  );
 }
