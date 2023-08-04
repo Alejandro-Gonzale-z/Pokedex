@@ -1,5 +1,6 @@
 import React from "react";
 import "./TypeList.css";
+import { Link } from "react-router-dom";
 
 interface TypeListProps {
   List: string[];
@@ -21,13 +22,15 @@ const TypeList: React.FC<TypeListProps> = ({
   return (
     <div className="container">
       {List.map((type) => (
-        <button
-          key={List.indexOf(type)}
-          onClick={() => handleClick(type)}
-          className={`button ${type.toLowerCase()}`}
-        >
-          {type}
-        </button>
+        <Link to={`/type/${type}`}>
+          <button
+            key={List.indexOf(type)}
+            onClick={() => handleClick(type)}
+            className={`button ${type.toLowerCase()}`}
+          >
+            {type}
+          </button>
+        </Link>
       ))}
     </div>
   );

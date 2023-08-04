@@ -73,11 +73,16 @@ html {
   padding: 10px;
   cursor: pointer;
   background-color: #fff;
+  color: black;
 }
 
 .search-results li:hover {
   background-color: rgb(220, 217, 217);
 }
+.search-results a:visited{
+  color: rgba(0, 102, 255, 0.912);
+}
+
 
 .pokeball-img {
   display: flex;
@@ -93,4 +98,8 @@ html {
   width: 30px;
   height: 30px;
   margin-left: -15%;
+}
+
+.link {
+  text-decoration: none;
 }
