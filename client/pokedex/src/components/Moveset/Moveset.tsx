@@ -59,28 +59,28 @@ const Moveset: React.FC<movesetProps> = ({ movesetData, Pokemon }) => {
 
   return (
     <div >
-      <h1>{Pokemon.name} Moves</h1>
-      <table>
+      <h1 className="h1">{Pokemon.name} Moves</h1>
+      <table className="table">
         <thead>
           <tr>
-            <th>Level</th>
-            <th>Name</th>
-            <th>Power</th>
-            <th>PP</th>
-            <th>Accuracy</th>
-            <th>Type</th>
-            <th>Category</th>
+            <th className="th">Level</th>
+            <th className="th">Name</th>
+            <th className="th">Power</th>
+            <th className="th">PP</th>
+            <th className="th">Accuracy</th>
+            <th className="th">Type</th>
+            <th className="th">Category</th>
           </tr>
         </thead>
         <tbody>
           {filteredMoves.map((move) => (
             <tr key={move.name}>
-              <td>{move.levelLearned}</td>
-              <td>{move.name}</td>
-              <td>{move.power !== 0 ? move.power : "-"}</td>
-              <td>{move.powerPoints}</td>
-              <td>{move.accuracy}</td>
-              <td>
+              <td className="td">{move.levelLearned}</td>
+              <td className="td">{move.name}</td>
+              <td className="td">{move.power !== 0 ? move.power : "-"}</td>
+              <td className="td">{move.powerPoints}</td>
+              <td className="td">{move.accuracy}</td>
+              <td className="td">
                 <button className={`list-button ${move.type.toLowerCase()}`}>
                   {move.type}
                 </button>

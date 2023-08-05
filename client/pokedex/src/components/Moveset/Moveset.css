@@ -1,4 +1,4 @@
-table {
+.table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
@@ -7,14 +7,14 @@ table {
   color: #333;
 }
 
-th {
+.th {
   background-color: #f2f2f2;
   padding: 10px;
   text-align: left;
   color: rgba(0, 102, 255, 0.912);
 }
 
-td {
+.td {
   border-bottom: 1px solid #ddd;
   padding: 10px;
 }
@@ -23,7 +23,7 @@ tr:hover {
   background-color: #d6d3d3;
 }
 
-h1 {
+.h1 {
   font-size: 24px;
   margin-bottom: 10px;
   margin-left: 10px;

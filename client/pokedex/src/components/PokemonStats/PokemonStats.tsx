@@ -7,17 +7,17 @@ interface PokemonStatsProps {
 const PokemonStats: React.FC<PokemonStatsProps> = ({ pokemon }) => {
   return (
     <div>
-      <div className="stats-header">
+      <div>
         <h1>{pokemon.name}</h1>
         <h1># {pokemon.PokedexId}</h1>
       </div>
-      <div className="image-container">
+      <div>
         <img
           src={pokemon.mainPicture}
           alt={pokemon.name}
           className="stats-image"
         />
-        <div className="stats-button">
+        <div>
           {pokemon.elementalType.map((type) => (
             <button>{type}</button>
           ))}
