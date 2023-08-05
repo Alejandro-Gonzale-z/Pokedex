@@ -3,25 +3,30 @@ import {useEffect, useState} from "react";
 import SearchBar from "../components/SearchBar/searchbar";
 import {useParams} from "react-router-dom";
 import Pokedex from "../PokemonInterface";
+import Moveset from "../components/Moveset/Moveset";
+import Moves from "../MovesInterface";
 
 
 
 const PokemonDetail = () => {
     const {name} = useParams();
-    const [pokedexData,setPokedexData] = useState<any[]>([]);
-    const [pokemonData,setPokemonData] =useState<Pokedex | null>(null);
-
+    const [pokedexData,setPokedexData] = useState<any[]>([]); //all pokemon
+    const [pokemonData,setPokemonData] =useState<Pokedex | null>(null); //individual pokemon
+    const [moveData, setMoveData] = useState<Moves[]>([]);
     useEffect(() => {
 
+        // get all pokemon for searchbar
         axios
         .get("http://localhost:5000/pokemon/api/")
         .then((response)=> {
             setPokedexData(response.data);
         })
         .catch((error) =>{
-            console.log("Error fetching all Pokedex data:", error);
+            console.log("Error fetching all Pokedex data: ", error);
         });
         
+
+        //get individual pokemon for details
         const fetchPokemonData = async () => {
           try{
             const response = await axios.get(
@@ -29,11 +34,22 @@ const PokemonDetail = () => {
             );
             setPokemonData(response.data);
           } catch (error){
-            console.log("Error fetching individual Pokemon data:", error);
+            console.log("Error fetching individual Pokemon data: ", error);
           }
         };
       
         fetchPokemonData();
+
+        //get moveset for movetable
+        axios
+        .get("http://localhost:5000/moves/api")
+        .then((response)=>{
+            setMoveData(response.data);
+        })
+        .catch((error) =>{
+          console.log("Error fetching moveset data: ", error);
+        });
+
     },[name]);
 
     if (!pokemonData){
@@ -44,8 +60,7 @@ const PokemonDetail = () => {
       <div>
         <SearchBar PokemonList={pokedexData}/>
         <h1>{pokemonData.name}</h1>
-        <h2>{pokemonData.PokedexId}</h2>
-        <img src={pokemonData.mainPicture} alt ={pokemonData.name}/>
+        <Moveset movesetData={moveData} Pokemon={pokemonData} />
       </div>  
     );
 }
