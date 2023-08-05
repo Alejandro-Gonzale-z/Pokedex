@@ -10,17 +10,14 @@ interface TypeListProps {
 
 const TypeList: React.FC<TypeListProps> = ({
   List,
-  filteredList,
   setFilteredList,
 }) => {
   const handleClick = (type: string) => {
-    console.log(type);
     setFilteredList([type]);
-    console.log(filteredList);
   };
 
   return (
-    <div className="container">
+    <div className="container" key="">
       {List.map((type) => (
         <Link to={`/type/${type}`}>
           <button
