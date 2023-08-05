@@ -4,7 +4,7 @@ import React from "react";
 import "./searchbar.css";
 import searchImage from "./Search-Button-PNG-Image-Free-Download.png";
 import pokeballImg from "./pokeball.png";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 interface SearchBarProps {
   PokemonList: Pokedex[];
@@ -16,7 +16,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ PokemonList }) => {
   const searchContainerRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
 
-  useEffect(()=> {
+  useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (
         searchContainerRef.current &&
@@ -29,9 +29,8 @@ const SearchBar: React.FC<SearchBarProps> = ({ PokemonList }) => {
     document.addEventListener("click", handleClickOutside);
 
     return () => {
-      document.removeEventListener("click",handleClickOutside);
-    }
-
+      document.removeEventListener("click", handleClickOutside);
+    };
   }, []);
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -41,8 +40,8 @@ const SearchBar: React.FC<SearchBarProps> = ({ PokemonList }) => {
 
   const handleCardClick = () => {
     setIsVisible(false);
-  }
-  
+  };
+
   const filteredPokemon = PokemonList.filter(
     (pokemon) =>
       pokemon.name.toLowerCase().startsWith(searchText.toLowerCase()) ||
@@ -50,28 +49,28 @@ const SearchBar: React.FC<SearchBarProps> = ({ PokemonList }) => {
   );
 
   const searchTextPokemon = filteredPokemon.some(
-    (pokemon)=> 
+    (pokemon) =>
       pokemon.name.toLowerCase().startsWith(searchText.toLowerCase()) ||
       pokemon.PokedexId.toString().startsWith(searchText)
-    );
+  );
 
-    const handleEnterKey = (event: React.KeyboardEvent<HTMLInputElement>) => {
-        if (event.key === "Enter"){
-          const newSearchText = searchText.toLowerCase().trim();
-          const pokemon = PokemonList.find(
-            (pokemon) => 
-            pokemon.name.toLowerCase() === newSearchText || 
-            pokemon.PokedexId.toString() === newSearchText
-          );
+  const handleEnterKey = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === "Enter") {
+      const newSearchText = searchText.toLowerCase().trim();
+      const pokemon = PokemonList.find(
+        (pokemon) =>
+          pokemon.name.toLowerCase() === newSearchText ||
+          pokemon.PokedexId.toString() === newSearchText
+      );
 
-          if (pokemon) {
-            setIsVisible(false);
-            navigate(`/pokemon/${pokemon.name}`);
-          } else{
-            event.preventDefault();
-          }
-        }
-    };
+      if (pokemon) {
+        setIsVisible(false);
+        navigate(`/pokemon/${pokemon.name}`);
+      } else {
+        event.preventDefault();
+      }
+    }
+  };
 
   return (
     <div className="header">
@@ -94,10 +93,12 @@ const SearchBar: React.FC<SearchBarProps> = ({ PokemonList }) => {
         {searchText.length > 0 && searchTextPokemon && isVisible && (
           <ul className="search-results">
             {filteredPokemon.map((pokemon, index) => (
-              <Link to={`/pokemon/${pokemon.name}`} className="link" onClick={handleCardClick}>
-              <li key={index}>
-                {pokemon.name}
-              </li>
+              <Link
+                to={`/pokemon/${pokemon.name}`}
+                className="link"
+                onClick={handleCardClick}
+              >
+                <li key={index}>{pokemon.name}</li>
               </Link>
             ))}
           </ul>

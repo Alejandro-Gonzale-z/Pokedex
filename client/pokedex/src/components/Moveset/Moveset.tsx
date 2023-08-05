@@ -17,7 +17,7 @@ interface Move {
   levelLearned: number;
 }
 interface Icons {
-    [key: string]: string;
+  [key: string]: string;
 }
 
 const Moveset: React.FC<movesetProps> = ({ movesetData, Pokemon }) => {
@@ -28,6 +28,8 @@ const Moveset: React.FC<movesetProps> = ({ movesetData, Pokemon }) => {
     Special: "https://img.pokemondb.net/images/icons/move-special.png",
   };
 
+  // created moves database to remove redudantly adding the same move stats for each pokemon
+  // this useEffect hook merged the 2 databases together so all the pokemon now have direct ass to move stats
   useEffect(() => {
     const mergeMoves = Pokemon.moveset.map((moveFromPokemon) => {
       const moveFromMovesetData = movesetData.find(
@@ -51,13 +53,13 @@ const Moveset: React.FC<movesetProps> = ({ movesetData, Pokemon }) => {
     setFilteredMoves(filteredMoveset);
   }, [Pokemon]);
 
-  
   if (!movesetData) {
     return null;
   }
 
   return (
-    <div>
+    <div >
+      <h1>{Pokemon.name} Moves</h1>
       <table>
         <thead>
           <tr>
@@ -84,7 +86,11 @@ const Moveset: React.FC<movesetProps> = ({ movesetData, Pokemon }) => {
                 </button>
               </td>
               <td>
-                <img src={icons[move.category]} alt={move.category} className="small-icon"/>
+                <img
+                  src={icons[move.category]}
+                  alt={move.category}
+                  className="small-icon"
+                />
               </td>
             </tr>
           ))}
