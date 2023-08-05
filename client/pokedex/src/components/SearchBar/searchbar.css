@@ -1,4 +1,3 @@
-body,
 html {
   margin: 0;
   padding: 0;
@@ -79,10 +78,9 @@ html {
 .search-results li:hover {
   background-color: rgb(220, 217, 217);
 }
-.search-results a:visited{
+.search-results a:visited {
   color: rgba(0, 102, 255, 0.912);
 }
-
 
 .pokeball-img {
   display: flex;

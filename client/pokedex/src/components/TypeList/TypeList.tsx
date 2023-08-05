@@ -8,10 +8,7 @@ interface TypeListProps {
   setFilteredList: React.Dispatch<React.SetStateAction<string[]>>;
 }
 
-const TypeList: React.FC<TypeListProps> = ({
-  List,
-  setFilteredList,
-}) => {
+const TypeList: React.FC<TypeListProps> = ({ List, setFilteredList }) => {
   const handleClick = (type: string) => {
     setFilteredList([type]);
   };
@@ -19,7 +16,7 @@ const TypeList: React.FC<TypeListProps> = ({
   return (
     <div className="container" key="">
       {List.map((type) => (
-        <Link to={`/type/${type}`}>
+        <Link to={`/type/${type}`} key={type}>
           <button
             key={List.indexOf(type)}
             onClick={() => handleClick(type)}

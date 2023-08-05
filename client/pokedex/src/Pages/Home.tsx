@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import SearchBar from "../components/SearchBar/searchbar";
+import SearchBar from "../components/SearchBar/SearchBar";
 import axios from "axios";
 import Card from "../components/Cards/Card";
 import TypeList from "../components/TypeList/TypeList";

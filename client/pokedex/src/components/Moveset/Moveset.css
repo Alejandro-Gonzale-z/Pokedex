@@ -26,6 +26,7 @@ tr:hover {
 h1 {
   font-size: 24px;
   margin-bottom: 10px;
+  margin-left: 10px;
 }
 
 .table-container {
@@ -54,7 +55,6 @@ h1 {
     height: 20px;
     align-items: center;
 }
-
 
 .fire {
   background-color: red;
