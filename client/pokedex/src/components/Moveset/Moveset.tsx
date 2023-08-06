@@ -85,7 +85,7 @@ const Moveset: React.FC<movesetProps> = ({ movesetData, Pokemon }) => {
                   {move.type}
                 </button>
               </td>
-              <td>
+              <td className="td">
                 <img
                   src={icons[move.category]}
                   alt={move.category}
