@@ -1,5 +1,7 @@
 import Pokedex from "../../PokemonInterface";
 import "./PokemonStats.css";
+import Button from "../Button/Button";
+
 interface PokemonStatsProps {
   pokemon: Pokedex;
 }
@@ -7,7 +9,7 @@ interface PokemonStatsProps {
 const PokemonStats: React.FC<PokemonStatsProps> = ({ pokemon }) => {
   return (
     <div>
-      <div>
+      <div className="stats-header">
         <h1>{pokemon.name}</h1>
         <h1># {pokemon.PokedexId}</h1>
       </div>
@@ -19,7 +21,7 @@ const PokemonStats: React.FC<PokemonStatsProps> = ({ pokemon }) => {
         />
         <div>
           {pokemon.elementalType.map((type) => (
-            <button>{type}</button>
+            <Button>{type}</Button>
           ))}
         </div>
       </div>

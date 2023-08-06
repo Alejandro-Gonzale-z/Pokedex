@@ -35,6 +35,7 @@ html {
 .search-container form {
   display: flex;
   align-items: center;
+  width: 100%;
 }
 
 .search-container input {
@@ -45,7 +46,7 @@ html {
   transition: width 0.3s;
   outline: none;
   min-width: 100px; /* Set a minimum width to prevent it from collapsing */
-  width: 250px; /* Set an initial width */
+  width: 100%; /* Set an initial width */
   font-size: 20px;
 }
 

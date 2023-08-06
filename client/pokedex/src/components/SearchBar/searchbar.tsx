@@ -79,7 +79,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ PokemonList }) => {
         <img src={pokeballImg} alt="Pokeball" className="pokeball-img" />
       </a>
       <div className="search-container">
-        <form>
+        <form className="form">
           <input
             type="text"
             placeholder="Search Pokedex"

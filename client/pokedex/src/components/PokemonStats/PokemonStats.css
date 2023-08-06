@@ -1,6 +1,11 @@
-.stats-image{
-    width: 250px;
-    display: flex;
-    margin-bottom: 15px;
-    margin-left: 40px;
+.stats-image {
+  width: 250px;
+  display: flex;
+  margin-bottom: 15px;
+  margin-left: 40px;
+}
+
+.stats-header {
+  display: flex;
+  justify-content: space-between;
 }
