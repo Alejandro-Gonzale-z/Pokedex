@@ -8,7 +8,7 @@ interface PokemonStatsProps {
 
 const PokemonStats: React.FC<PokemonStatsProps> = ({ pokemon }) => {
   return (
-    <div>
+    <div className="stats-body">
       <div className="stats-header">
         <h1>{pokemon.name}</h1>
         <h1># {pokemon.PokedexId}</h1>
@@ -21,7 +21,7 @@ const PokemonStats: React.FC<PokemonStatsProps> = ({ pokemon }) => {
         />
         <div>
           {pokemon.elementalType.map((type) => (
-            <Button>{type}</Button>
+            <Button key={type}>{type}</Button>
           ))}
         </div>
       </div>

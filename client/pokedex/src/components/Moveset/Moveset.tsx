@@ -53,13 +53,9 @@ const Moveset: React.FC<movesetProps> = ({ movesetData, Pokemon }) => {
     setFilteredMoves(filteredMoveset);
   }, [Pokemon]);
 
-  if (!movesetData) {
-    return null;
-  }
-
   return (
-    <div >
-      <h1 className="h1">{Pokemon.name} Moves</h1>
+    <div className="moveset-body">
+      <h1 className="moveset-h1">{Pokemon.name} Moves</h1>
       <table className="table">
         <thead>
           <tr>
@@ -79,7 +75,7 @@ const Moveset: React.FC<movesetProps> = ({ movesetData, Pokemon }) => {
               <td className="td">{move.name}</td>
               <td className="td">{move.power !== 0 ? move.power : "-"}</td>
               <td className="td">{move.powerPoints}</td>
-              <td className="td">{move.accuracy}</td>
+              <td className="td">{move.accuracy !==0 ? `${move.accuracy}%` : "-"}</td>
               <td className="td">
                 <button className={`list-button ${move.type.toLowerCase()}`}>
                   {move.type}

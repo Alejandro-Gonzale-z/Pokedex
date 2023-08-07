@@ -12,6 +12,7 @@ const PokemonDetail = () => {
   const [pokedexData, setPokedexData] = useState<any[]>([]); //all pokemon
   const [pokemonData, setPokemonData] = useState<Pokedex | null>(null); //individual pokemon
   const [moveData, setMoveData] = useState<Moves[]>([]);
+  
   useEffect(() => {
     // get all pokemon for searchbar
     axios

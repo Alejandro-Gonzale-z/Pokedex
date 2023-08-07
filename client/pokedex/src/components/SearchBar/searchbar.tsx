@@ -91,7 +91,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ PokemonList }) => {
           <img src={searchImage} alt="searchImage" className="search-img" />
         </form>
         {searchText.length > 0 && searchTextPokemon && isVisible && (
-          <ul className="search-results">
+          <ul className="search-results" >
             {filteredPokemon.map((pokemon, index) => (
               <Link
                 to={`/pokemon/${pokemon.name}`}
