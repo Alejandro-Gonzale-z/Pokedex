@@ -1,7 +1,14 @@
-.main-button {
+.button-container{
   width: 175px;
+  display: inline-flex;
+  
+}
+
+.main-button {
+  width: 100%;
   padding: 7px;
   margin-right: 30px;
   border-radius: 5px;
   border: none;
 }
+
