@@ -10,18 +10,23 @@ const PokemonStats: React.FC<PokemonStatsProps> = ({ pokemon }) => {
   return (
     <div className="stats-body">
       <div className="stats-header">
-        <h1>{pokemon.name}</h1>
-        <h1># {pokemon.PokedexId}</h1>
+        <h1 className={`${pokemon.elementalType[0].toLowerCase()}-font`}>
+          {pokemon.name}
+        </h1>
+        <h1 className={`${pokemon.elementalType[0].toLowerCase()}-font`}>
+          # {pokemon.PokedexId}
+        </h1>
       </div>
       <div>
+        {/* <div>{pokemon.description}</div> */}
         <img
           src={pokemon.mainPicture}
           alt={pokemon.name}
           className="stats-image"
         />
-        <div>
+        <div className="main-button-container">
           {pokemon.elementalType.map((type) => (
-            <Button key={type}>{type}</Button>
+            <Button key={type} arrayLength={pokemon.elementalType.length}>{type}</Button>
           ))}
         </div>
       </div>

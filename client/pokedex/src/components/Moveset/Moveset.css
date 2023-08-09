@@ -1,5 +1,5 @@
-.moveset-body{
-  margin-left: 10px; 
+.moveset-body {
+  margin-left: 10px;
   margin-right: 10px;
 }
 
@@ -10,7 +10,6 @@
   font-family: Arial, sans-serif;
   font-size: 14px;
   color: #333;
-
 }
 
 .th {
@@ -50,8 +49,19 @@ tr:hover {
   text-align: center;
 }
 
-.small-icon{
-    width: 25px;
-    height: 20px;
-    align-items: center;
+.small-icon {
+  width: 25px;
+  height: 20px;
+  align-items: center;
+}
+
+.small-image{
+  width: 35px;
+  height: 30px;
+  margin-left: 10px;
+}
+
+.moveset-heading{
+  display: flex;
+  align-items: center;
 }

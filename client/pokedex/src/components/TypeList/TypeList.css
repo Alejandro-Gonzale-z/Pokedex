@@ -97,3 +97,75 @@
   background-color: rgb(72, 68, 68);
   color: white;
 }
+
+.fire-font {
+  color: red;
+}
+
+.grass-font {
+  color: green;
+}
+
+.water-font {
+  color: blue;
+}
+
+.flying-font {
+  color: rgba(72, 72, 185, 0.94);
+}
+
+.normal-font {
+ color: rgba(183, 161, 133, 0.971);
+}
+
+.poison-font {
+  color: purple;
+}
+
+.rock-font {
+  color: rgb(171, 84, 13);
+}
+
+.bug-font {
+  color: #9fb036;
+}
+
+.ghost-font {
+  color: rgba(42, 5, 84, 0.882);
+}
+
+.fighting-font {
+  color: rgba(255, 0, 0, 0.468);
+}
+
+.ground-font {
+  color: sandybrown;
+}
+
+.psychic-font {
+  color: hotpink;
+}
+
+.ice-font {
+  color: lightblue;
+}
+
+.electric-font {
+  color: yellow;
+}
+
+.dragon-font {
+  color: rgb(97, 23, 167);
+}
+
+.dark-font {
+  color: rgb(57, 35, 35);
+}
+
+.fairy-font {
+  color: rgb(184, 112, 124);
+}
+
+.steel-font {
+  color: rgb(72, 68, 68);
+}

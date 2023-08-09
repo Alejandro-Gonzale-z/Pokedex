@@ -6,6 +6,7 @@ import Pokedex from "../PokemonInterface";
 import Moveset from "../components/Moveset/Moveset";
 import Moves from "../MovesInterface";
 import PokemonStats from "../components/PokemonStats/PokemonStats";
+import StrengthWeakness from "../components/StrengthWeakness/StrengthWeakness";
 
 const PokemonDetail = () => {
   const { name } = useParams();
@@ -57,6 +58,7 @@ const PokemonDetail = () => {
     <div>
       <SearchBar PokemonList={pokedexData} />
       <PokemonStats pokemon={pokemonData} />
+      <StrengthWeakness strength={pokemonData.strength} weakness={pokemonData.weakness} />
       <Moveset movesetData={moveData} Pokemon={pokemonData} />
     </div>
   );
