@@ -2,7 +2,8 @@ import { useState, useEffect } from "react";
 import Moves from "../../MovesInterface";
 import Pokedex from "../../PokemonInterface";
 import "./Moveset.css";
-import image from "./tms/flying-tm.png";
+import "./GetTm";
+import GetTm from "./GetTm";
 
 interface movesetProps {
   movesetData: Moves[];
@@ -59,7 +60,7 @@ const Moveset: React.FC<movesetProps> = ({ movesetData, Pokemon }) => {
       <div className="moveset-heading">
       <h1 className={`moveset-h1 ${Pokemon.elementalType[0].toLowerCase()}-font`}>{Pokemon.name} Moves</h1>
       {/* tm image below */}
-      <img src={image} alt={Pokemon.name} className="small-image"/> 
+      <img src={GetTm(Pokemon.elementalType[0])} alt={Pokemon.name} className="small-image"/> 
       </div>
       <table className="table">
         <thead>

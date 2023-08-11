@@ -60,7 +60,7 @@
 }
 
 .fighting {
-  background-color: rgba(255, 0, 0, 0.468);
+  background-color: rgb(192, 47, 39);
 }
 
 .ground {
@@ -135,7 +135,7 @@
 }
 
 .fighting-font {
-  color: rgba(255, 0, 0, 0.468);
+  color: rgb(192, 47, 39);
 }
 
 .ground-font {

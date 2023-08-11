@@ -79,7 +79,7 @@
 }
 
 .fighting {
-  background-color: rgba(255, 0, 0, 0.468);
+  background-color:  rgb(192, 47, 39);
 }
 
 .ground {
@@ -163,7 +163,7 @@
 }
 
 .waterfighting {
-  background: linear-gradient(145deg, blue, rgba(255, 0, 0, 0.468));
+  background: linear-gradient(145deg, blue, rgb(192, 47, 39));
 }
 
 .rockground {
