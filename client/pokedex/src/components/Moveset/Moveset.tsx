@@ -59,8 +59,7 @@ const Moveset: React.FC<movesetProps> = ({ movesetData, Pokemon }) => {
     <div className="moveset-body">
       <div className="moveset-heading">
       <h1 className={`moveset-h1 ${Pokemon.elementalType[0].toLowerCase()}-font`}>{Pokemon.name} Moves</h1>
-      {/* tm image below */}
-      <img src={GetTm(Pokemon.elementalType[0])} alt={Pokemon.name} className="small-image"/> 
+      <img src={GetTm(Pokemon.elementalType[0])} alt={Pokemon.name} className="tm-image"/> 
       </div>
       <table className="table">
         <thead>
@@ -91,7 +90,7 @@ const Moveset: React.FC<movesetProps> = ({ movesetData, Pokemon }) => {
                 <img
                   src={icons[move.category]}
                   alt={move.category}
-                  className="small-icon"
+                  className="category-icon"
                 />
               </td>
             </tr>

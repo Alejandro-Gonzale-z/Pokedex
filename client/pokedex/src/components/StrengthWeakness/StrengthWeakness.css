@@ -30,3 +30,15 @@
 .buttons-containers{
     max-width: 1000px;
 }
+
+.thumbs{
+    margin-top: 10px;
+    margin-left: 12px;
+    width: 35px;
+    height: 30px;
+}
+
+.half-container-heading{
+    display: flex;
+    align-items: center;
+}

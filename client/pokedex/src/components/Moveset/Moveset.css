@@ -49,13 +49,14 @@ tr:hover {
   text-align: center;
 }
 
-.small-icon {
+.category-icon {
   width: 25px;
   height: 20px;
   align-items: center;
 }
 
-.small-image{
+.tm-image{
+  margin-top: 7px;
   width: 35px;
   height: 30px;
   margin-left: 10px;
