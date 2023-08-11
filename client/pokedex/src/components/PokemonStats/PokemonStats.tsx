@@ -18,26 +18,28 @@ const PokemonStats: React.FC<PokemonStatsProps> = ({ pokemon }) => {
           # {pokemon.PokedexId}
         </h1>
       </div>
-      <div>
-        <div className="stats-image-container">
-          <StatsBar heading="HP" value ={pokemon.hp} />
-          <StatsBar heading="Attack" value = {pokemon.attack} />
-          <StatsBar heading="Defense" value = {pokemon.defense} />
-          <StatsBar heading="Speed" value = {pokemon.speed} />
-          <StatsBar heading="Special Attack" value = {pokemon.specialAttack} />
-          <StatsBar heading="Special Defense" value = {pokemon.specialDefense} />
-        <img
-          src={pokemon.mainPicture}
-          alt={pokemon.name}
-          className="main-image"
+      <div className="stats-image-container">
+        <div className="stats-image-left-container">
+          <img
+            src={pokemon.mainPicture}
+            alt={pokemon.name}
+            className="main-image"
           />
+          <div className="main-button-container">
+            {pokemon.elementalType.map((type) => (
+              <Button key={type} arrayLength={pokemon.elementalType.length}>
+                {type}
+              </Button>
+            ))}
           </div>
-        <div className="main-button-container">
-          {pokemon.elementalType.map((type) => (
-            <Button key={type} arrayLength={pokemon.elementalType.length}>
-              {type}
-            </Button>
-          ))}
+        </div>
+        <div className="stats-bars-container">
+          <StatsBar heading="HP" value={pokemon.hp} />
+          <StatsBar heading="Attack" value={pokemon.attack} />
+          <StatsBar heading="Defense" value={pokemon.defense} />
+          <StatsBar heading="Speed" value={pokemon.speed} />
+          <StatsBar heading="Special Attack" value={pokemon.specialAttack} />
+          <StatsBar heading="Special Defense" value={pokemon.specialDefense} />
         </div>
       </div>
     </div>
