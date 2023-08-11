@@ -1,0 +1,30 @@
+.stats-bar {
+    display: flex;
+    align-items: center;
+  }
+
+.stats-bar-heading{
+    font-size: 20px;
+}
+.bar-container {
+    margin-left: 50px;
+    width: 300px;
+    height: 20px;
+    background-color: #8989897c;
+    border-radius: 100px;
+    position: relative;
+    display: flex;
+}
+
+.blue-bar {
+    display: flex;
+    height: 100%;
+    background-color: blue;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-content: flex-start;
+    border-bottom-left-radius: 100px;
+    border-top-left-radius: 100px
+}
+

@@ -1,6 +1,7 @@
 import Pokedex from "../../PokemonInterface";
 import "./PokemonStats.css";
 import Button from "../Button/Button";
+import StatsBar from "../StatsBar/StatsBar";
 
 interface PokemonStatsProps {
   pokemon: Pokedex;
@@ -18,15 +19,24 @@ const PokemonStats: React.FC<PokemonStatsProps> = ({ pokemon }) => {
         </h1>
       </div>
       <div>
-        {/* <div>{pokemon.description}</div> */}
+        <div className="stats-image-container">
+          <StatsBar heading="HP" value ={pokemon.hp} />
+          <StatsBar heading="Attack" value = {pokemon.attack} />
+          <StatsBar heading="Defense" value = {pokemon.defense} />
+          <StatsBar heading="Speed" value = {pokemon.speed} />
+          <StatsBar heading="Special Attack" value = {pokemon.specialAttack} />
+          <StatsBar heading="Special Defense" value = {pokemon.specialDefense} />
         <img
           src={pokemon.mainPicture}
           alt={pokemon.name}
-          className="stats-image"
-        />
+          className="main-image"
+          />
+          </div>
         <div className="main-button-container">
           {pokemon.elementalType.map((type) => (
-            <Button key={type} arrayLength={pokemon.elementalType.length}>{type}</Button>
+            <Button key={type} arrayLength={pokemon.elementalType.length}>
+              {type}
+            </Button>
           ))}
         </div>
       </div>
