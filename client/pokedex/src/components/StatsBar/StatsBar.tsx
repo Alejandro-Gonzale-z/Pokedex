@@ -6,7 +6,7 @@ interface statsbarProps {
 }
 
 const StatsBar: React.FC<statsbarProps> = ({ heading, value }) => {
-    const widthValue = (value / 3) + 30;
+    const widthValue = (value / 2);
 
     return (
     <div className="stats-bar">

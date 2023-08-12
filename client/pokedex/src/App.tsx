@@ -1,6 +1,7 @@
 import {BrowserRouter as Router,Route,Routes} from 'react-router-dom';
 import Home from './Pages/Home';
 import PokemonDetail from './Pages/PokemonDetail';
+import "./App.css";
 
 const App = () => {
   return (

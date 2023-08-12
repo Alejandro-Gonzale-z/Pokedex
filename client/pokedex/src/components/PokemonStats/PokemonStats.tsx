@@ -36,7 +36,7 @@ const PokemonStats: React.FC<PokemonStatsProps> = ({ pokemon }) => {
         <div className="stats-bars-container">
           <StatsBar heading="HP" value={pokemon.hp} />
           <StatsBar heading="Attack" value={pokemon.attack} />
-          <StatsBar heading="Defense" value={pokemon.defense} />
+          <StatsBar heading="Defense" value={pokemon.defense}/>
           <StatsBar heading="Speed" value={pokemon.speed} />
           <StatsBar heading="Special Attack" value={pokemon.specialAttack} />
           <StatsBar heading="Special Defense" value={pokemon.specialDefense} />
