@@ -6,11 +6,11 @@
 
 .main-image {
   display: flex;
-  width: 250px;
-  display: flex;
+  width: 95%;
   margin-bottom: 15px;
-  margin-left: 40px;
-  float: left;
+  margin-left: 2.5%;
+  max-width: 100%;
+  margin-right: 2.5%;
 }
 
 .stats-header {
@@ -22,19 +22,20 @@
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
-  max-width: 1500px;
 }
 
 .stats-image-left-container {
   display: flex;
   flex-direction: column;
   width: 25%;
+  margin-right: 2.5%;
 }
 
-.stats-bars-container {
-  display: flex;
-  flex-wrap: wrap;
-  width: 75%;
-  column-gap: 30px;
-  row-gap: 15px;
+.stats-image-right-container {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  grid-template-rows: repeat(3,auto);
+  width: 70%;
+  margin-left: 2.5%;
+  gap: 10%;
 }

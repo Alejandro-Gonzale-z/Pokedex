@@ -33,7 +33,7 @@ const PokemonStats: React.FC<PokemonStatsProps> = ({ pokemon }) => {
             ))}
           </div>
         </div>
-        <div className="stats-bars-container">
+        <div className="stats-image-right-container">
           <StatsBar heading="HP" value={pokemon.hp} />
           <StatsBar heading="Attack" value={pokemon.attack} />
           <StatsBar heading="Defense" value={pokemon.defense}/>

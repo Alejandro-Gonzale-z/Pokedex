@@ -10,7 +10,6 @@ const Button: React.FC<ButtonProps> = ({
   arrayLength,
 }: ButtonProps) => {
   return (
-    <div>
       <button
         type="button"
         className={`${
@@ -19,7 +18,6 @@ const Button: React.FC<ButtonProps> = ({
       >
         {children}
       </button>
-    </div>
   );
 };
 
