@@ -1,7 +1,6 @@
 .stats-body {
   margin-left: 10px;
   margin-right: 10px;
-
 }
 
 .main-image {
@@ -20,8 +19,10 @@
 
 .stats-image-container {
   display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
+  max-height: 450px;
+  min-height: 300px;
+  margin-bottom: 40px;
+  width: 100%;
 }
 
 .stats-image-left-container {
@@ -29,13 +30,20 @@
   flex-direction: column;
   width: 25%;
   margin-right: 2.5%;
+  min-height: 300px;
+  max-height: 450px;
 }
 
-.stats-image-right-container {
-  display: grid;
-  grid-template-columns: repeat(2,1fr);
-  grid-template-rows: repeat(3,auto);
-  width: 70%;
+.right-parent {
+  width: 75%;
   margin-left: 2.5%;
-  gap: 10%;
+}
+
+.stats-right-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, auto);
+  width: 100%;
+  column-gap: 5%;
+  max-height: 200px;
 }

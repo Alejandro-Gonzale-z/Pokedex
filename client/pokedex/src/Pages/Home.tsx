@@ -3,6 +3,7 @@ import SearchBar from "../components/SearchBar/SearchBar";
 import axios from "axios";
 import Card from "../components/Cards/Card";
 import TypeList from "../components/TypeList/TypeList";
+import HomeHeading from "../components/HomeHeading/HomeHeading";
 
 const Home = () => {
     const [pokedexData, setPokedexData] = useState<any[]>([]);
@@ -44,6 +45,7 @@ const Home = () => {
     return (
         <div>
           <SearchBar PokemonList={pokedexData} />
+          <HomeHeading />
           <TypeList
             List={List}
             filteredList={filteredList}

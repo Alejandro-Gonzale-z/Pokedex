@@ -13,7 +13,7 @@ const PokemonDetail = () => {
   const [pokedexData, setPokedexData] = useState<any[]>([]); //all pokemon
   const [pokemonData, setPokemonData] = useState<Pokedex | null>(null); //individual pokemon
   const [moveData, setMoveData] = useState<Moves[]>([]);
-  
+
   useEffect(() => {
     // get all pokemon for searchbar
     axios
@@ -58,7 +58,10 @@ const PokemonDetail = () => {
     <div>
       <SearchBar PokemonList={pokedexData} />
       <PokemonStats pokemon={pokemonData} />
-      <StrengthWeakness strength={pokemonData.strength} weakness={pokemonData.weakness} />
+      <StrengthWeakness
+        strength={pokemonData.strength}
+        weakness={pokemonData.weakness}
+      />
       <Moveset movesetData={moveData} Pokemon={pokemonData} />
     </div>
   );

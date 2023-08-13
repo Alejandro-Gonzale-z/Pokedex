@@ -1,19 +1,23 @@
 .container {
   gap: 10px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(9,1fr);
+  grid-template-rows: repeat(2,1fr);
   margin-top: 10px;
   margin-bottom: 30px;
+
 }
 
 .button {
-  width: 160px;
+  width: 100%;
   justify-content: center;
   border: none;
   border-radius: 5px;
   padding: 5px;
+}
+
+.types-heading{
+  font-size: 40px;
 }
 
 .fire {

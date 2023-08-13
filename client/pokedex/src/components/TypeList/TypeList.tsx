@@ -14,6 +14,8 @@ const TypeList: React.FC<TypeListProps> = ({ List, setFilteredList }) => {
   };
 
   return (
+    <div>
+    <h1 className="types-heading">Pokemon Types</h1>
     <div className="container" key="">
       {List.map((type) => (
         <Link to={`/type/${type}`} key={type}>
@@ -26,6 +28,7 @@ const TypeList: React.FC<TypeListProps> = ({ List, setFilteredList }) => {
           </button>
         </Link>
       ))}
+    </div>
     </div>
   );
 };

@@ -14,6 +14,8 @@ const Card: React.FC<CardProps> = ({ Pokemon, filteredList }) => {
   );
 
   return (
+    <div>
+      <h1>All Pokemon</h1>
     <div className="wrapper">
       {filteredPokemon.map((pokemon) => (
         <Link
@@ -38,10 +40,10 @@ const Card: React.FC<CardProps> = ({ Pokemon, filteredList }) => {
               alt={pokemon.name}
               className="card-img"
             />
-            <div className="card-body"></div>
           </div>
         </Link>
       ))}
+    </div>
     </div>
   );
 };
