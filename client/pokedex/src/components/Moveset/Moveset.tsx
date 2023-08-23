@@ -33,6 +33,7 @@ const Moveset: React.FC<movesetProps> = ({ movesetData, Pokemon }) => {
   // created moves database to remove redudantly adding the same move stats for each pokemon
   // this useEffect hook merged the 2 databases together so all the pokemon now have direct ass to move stats
   useEffect(() => {
+    try{
     const mergeMoves = Pokemon.moveset.map((moveFromPokemon) => {
       const moveFromMovesetData = movesetData.find(
         (move) => move.name === moveFromPokemon.moveName
@@ -53,8 +54,11 @@ const Moveset: React.FC<movesetProps> = ({ movesetData, Pokemon }) => {
     ) as Move[];
 
     setFilteredMoves(filteredMoveset);
-  }, [Pokemon]);
-4
+    } catch (error) {
+      console.error(error);
+    }
+  }, [movesetData]);
+
   return (
     <div className="moveset-body">
       <div className="moveset-heading">

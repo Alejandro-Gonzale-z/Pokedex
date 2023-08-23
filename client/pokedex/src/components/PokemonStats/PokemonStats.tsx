@@ -19,6 +19,9 @@ const PokemonStats: React.FC<PokemonStatsProps> = ({ pokemon }) => {
           # {pokemon.PokedexId}
         </h1>
       </div>
+        <div>
+          {/* insert component here */}
+        </div>
       <div className="stats-image-container">
         <div className="stats-image-left-container">
           <img

@@ -226,6 +226,19 @@ app.get("/pokemon/:name", function (req, res) {
     });
 });
 
+app.get("/poke/:PokedexId", function (req,res) {
+  Pokedex.findOne({ PokedexId: req.params.PokedexId})
+    .then((pokedexData) =>{
+      res.json(pokedexData);
+    })
+    .catch((error)=>{
+      console.log(error);
+      res
+      .status(500)
+      .json({error: "An error occured while fetching pokedex data"});
+    });
+});
+
 //API route to get individual pokemon data
 app.get("/moves/:name", function (req, res) {
   Moves.findOne({ name: req.params.name.replace(/-/g, ' ') })
